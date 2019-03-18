@@ -40,8 +40,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnTransferencia = new System.Windows.Forms.Button();
             this.lblTipo = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboDestinoTransferencia = new System.Windows.Forms.ComboBox();
             this.comboContas = new System.Windows.Forms.ComboBox();
             this.lblBuscaConta = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -61,7 +64,7 @@
             // bntDeposito
             // 
             this.bntDeposito.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntDeposito.Location = new System.Drawing.Point(37, 306);
+            this.bntDeposito.Location = new System.Drawing.Point(62, 306);
             this.bntDeposito.Name = "bntDeposito";
             this.bntDeposito.Size = new System.Drawing.Size(103, 35);
             this.bntDeposito.TabIndex = 1;
@@ -100,7 +103,7 @@
             // btnSaque
             // 
             this.btnSaque.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaque.Location = new System.Drawing.Point(329, 306);
+            this.btnSaque.Location = new System.Drawing.Point(247, 306);
             this.btnSaque.Name = "btnSaque";
             this.btnSaque.Size = new System.Drawing.Size(103, 35);
             this.btnSaque.TabIndex = 7;
@@ -150,6 +153,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnTransferencia);
             this.groupBox1.Controls.Add(this.textoTitular);
             this.groupBox1.Controls.Add(this.bntDeposito);
             this.groupBox1.Controls.Add(this.btnSaque);
@@ -162,16 +166,26 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(63, 269);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(463, 396);
+            this.groupBox1.Size = new System.Drawing.Size(671, 396);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Conta";
+            // 
+            // btnTransferencia
+            // 
+            this.btnTransferencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTransferencia.Location = new System.Drawing.Point(421, 306);
+            this.btnTransferencia.Name = "btnTransferencia";
+            this.btnTransferencia.Size = new System.Drawing.Size(143, 35);
+            this.btnTransferencia.TabIndex = 15;
+            this.btnTransferencia.Text = "Transferência";
+            this.btnTransferencia.UseVisualStyleBackColor = true;
             // 
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
             this.lblTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipo.Location = new System.Drawing.Point(18, 96);
+            this.lblTipo.Location = new System.Drawing.Point(418, 33);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(36, 16);
             this.lblTipo.TabIndex = 13;
@@ -179,22 +193,43 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.comboDestinoTransferencia);
             this.groupBox2.Controls.Add(this.comboContas);
             this.groupBox2.Controls.Add(this.lblTipo);
             this.groupBox2.Controls.Add(this.lblBuscaConta);
             this.groupBox2.Location = new System.Drawing.Point(63, 75);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(463, 164);
+            this.groupBox2.Size = new System.Drawing.Size(671, 164);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Busca de conta";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(17, 97);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 20);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Conta Destino";
+            // 
+            // comboDestinoTransferencia
+            // 
+            this.comboDestinoTransferencia.FormattingEnabled = true;
+            this.comboDestinoTransferencia.Location = new System.Drawing.Point(173, 96);
+            this.comboDestinoTransferencia.Name = "comboDestinoTransferencia";
+            this.comboDestinoTransferencia.Size = new System.Drawing.Size(197, 21);
+            this.comboDestinoTransferencia.TabIndex = 16;
+            this.comboDestinoTransferencia.SelectedIndexChanged += new System.EventHandler(this.comboDestinoTransferencia_SelectedIndexChanged);
             // 
             // comboContas
             // 
             this.comboContas.FormattingEnabled = true;
             this.comboContas.Location = new System.Drawing.Point(173, 35);
             this.comboContas.Name = "comboContas";
-            this.comboContas.Size = new System.Drawing.Size(158, 21);
+            this.comboContas.Size = new System.Drawing.Size(197, 21);
             this.comboContas.TabIndex = 15;
             this.comboContas.SelectedIndexChanged += new System.EventHandler(this.comboContas_SelectedIndexChanged);
             // 
@@ -204,15 +239,15 @@
             this.lblBuscaConta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBuscaConta.Location = new System.Drawing.Point(17, 33);
             this.lblBuscaConta.Name = "lblBuscaConta";
-            this.lblBuscaConta.Size = new System.Drawing.Size(123, 20);
+            this.lblBuscaConta.Size = new System.Drawing.Size(107, 20);
             this.lblBuscaConta.TabIndex = 14;
-            this.lblBuscaConta.Text = "Escolha a conta";
+            this.lblBuscaConta.Text = "Conta Origem";
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 686);
+            this.ClientSize = new System.Drawing.Size(806, 686);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.lblDash);
             this.Controls.Add(this.groupBox1);
@@ -246,6 +281,9 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblBuscaConta;
         private System.Windows.Forms.ComboBox comboContas;
+        private System.Windows.Forms.Button btnTransferencia;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboDestinoTransferencia;
     }
 }
 

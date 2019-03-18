@@ -34,6 +34,7 @@ namespace Caelum
             foreach(Conta conta in contas)
             {
                 comboContas.Items.Add(conta.Titular.Nome);
+                comboDestinoTransferencia.Items.Add(conta.Titular.Nome);
             }
             
             // Totalizador
@@ -96,6 +97,13 @@ namespace Caelum
             textoNumero.Text = Convert.ToString(selecionada.Numero);
             textoTitular.Text = selecionada.Titular.Nome;
             textoSaldo.Text = Convert.ToString(selecionada.Saldo);
+        }
+
+        private void comboDestinoTransferencia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int indice = comboDestinoTransferencia.SelectedIndex;
+            Conta selecinada = this.contas[indice];
+            
         }
     }
 }
