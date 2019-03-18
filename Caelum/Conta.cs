@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Caelum
+﻿namespace Caelum
 {
     public class Conta
     {
@@ -15,9 +9,16 @@ namespace Caelum
         public Cliente Titular { get; set; }
         public int Tipo { get; set; }
 
-       
+        // Construtor sem argumento
+        //public Conta() { }
+       // Construtor com argumento
+       public Conta (int numero, int tipo)
+        {
+            this.Tipo = tipo;
+            this.Numero = numero;
+        }
         // Método para depositar um valor
-        public void Deposita(double valor)
+        public virtual void Deposita(double valor)
         {
             this.Saldo += valor;
 

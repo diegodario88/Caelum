@@ -41,7 +41,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblTipo = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboContas = new System.Windows.Forms.ComboBox();
+            this.lblBuscaConta = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDash
@@ -57,7 +61,7 @@
             // bntDeposito
             // 
             this.bntDeposito.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntDeposito.Location = new System.Drawing.Point(63, 370);
+            this.bntDeposito.Location = new System.Drawing.Point(37, 306);
             this.bntDeposito.Name = "bntDeposito";
             this.bntDeposito.Size = new System.Drawing.Size(103, 35);
             this.bntDeposito.TabIndex = 1;
@@ -67,36 +71,36 @@
             // 
             // textoTitular
             // 
-            this.textoTitular.Location = new System.Drawing.Point(135, 114);
+            this.textoTitular.Location = new System.Drawing.Point(173, 30);
             this.textoTitular.Name = "textoTitular";
-            this.textoTitular.Size = new System.Drawing.Size(100, 20);
+            this.textoTitular.Size = new System.Drawing.Size(158, 20);
             this.textoTitular.TabIndex = 2;
             // 
             // textoNumero
             // 
-            this.textoNumero.Location = new System.Drawing.Point(135, 164);
+            this.textoNumero.Location = new System.Drawing.Point(173, 80);
             this.textoNumero.Name = "textoNumero";
-            this.textoNumero.Size = new System.Drawing.Size(100, 20);
+            this.textoNumero.Size = new System.Drawing.Size(158, 20);
             this.textoNumero.TabIndex = 3;
             // 
             // textoSaldo
             // 
-            this.textoSaldo.Location = new System.Drawing.Point(135, 205);
+            this.textoSaldo.Location = new System.Drawing.Point(173, 121);
             this.textoSaldo.Name = "textoSaldo";
-            this.textoSaldo.Size = new System.Drawing.Size(100, 20);
+            this.textoSaldo.Size = new System.Drawing.Size(158, 20);
             this.textoSaldo.TabIndex = 4;
             // 
             // textoValor
             // 
-            this.textoValor.Location = new System.Drawing.Point(135, 276);
+            this.textoValor.Location = new System.Drawing.Point(173, 192);
             this.textoValor.Name = "textoValor";
-            this.textoValor.Size = new System.Drawing.Size(100, 20);
+            this.textoValor.Size = new System.Drawing.Size(158, 20);
             this.textoValor.TabIndex = 6;
             // 
             // btnSaque
             // 
             this.btnSaque.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaque.Location = new System.Drawing.Point(233, 370);
+            this.btnSaque.Location = new System.Drawing.Point(329, 306);
             this.btnSaque.Name = "btnSaque";
             this.btnSaque.Size = new System.Drawing.Size(103, 35);
             this.btnSaque.TabIndex = 7;
@@ -108,7 +112,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(57, 116);
+            this.label2.Location = new System.Drawing.Point(17, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 20);
             this.label2.TabIndex = 8;
@@ -118,7 +122,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(57, 164);
+            this.label3.Location = new System.Drawing.Point(17, 78);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 20);
             this.label3.TabIndex = 9;
@@ -128,7 +132,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(57, 205);
+            this.label4.Location = new System.Drawing.Point(17, 121);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 20);
             this.label4.TabIndex = 10;
@@ -138,7 +142,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(59, 276);
+            this.label5.Location = new System.Drawing.Point(17, 192);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 20);
             this.label5.TabIndex = 11;
@@ -146,10 +150,19 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblTipo);
-            this.groupBox1.Location = new System.Drawing.Point(36, 75);
+            this.groupBox1.Controls.Add(this.textoTitular);
+            this.groupBox1.Controls.Add(this.bntDeposito);
+            this.groupBox1.Controls.Add(this.btnSaque);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.textoNumero);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.textoSaldo);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.textoValor);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(63, 269);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(396, 396);
+            this.groupBox1.Size = new System.Drawing.Size(463, 396);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Conta";
@@ -158,27 +171,49 @@
             // 
             this.lblTipo.AutoSize = true;
             this.lblTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipo.Location = new System.Drawing.Point(217, 89);
+            this.lblTipo.Location = new System.Drawing.Point(18, 96);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(36, 16);
             this.lblTipo.TabIndex = 13;
             this.lblTipo.Text = "Tipo";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.comboContas);
+            this.groupBox2.Controls.Add(this.lblTipo);
+            this.groupBox2.Controls.Add(this.lblBuscaConta);
+            this.groupBox2.Location = new System.Drawing.Point(63, 75);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(463, 164);
+            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Busca de conta";
+            // 
+            // comboContas
+            // 
+            this.comboContas.FormattingEnabled = true;
+            this.comboContas.Location = new System.Drawing.Point(173, 35);
+            this.comboContas.Name = "comboContas";
+            this.comboContas.Size = new System.Drawing.Size(158, 21);
+            this.comboContas.TabIndex = 15;
+            this.comboContas.SelectedIndexChanged += new System.EventHandler(this.comboContas_SelectedIndexChanged);
+            // 
+            // lblBuscaConta
+            // 
+            this.lblBuscaConta.AutoSize = true;
+            this.lblBuscaConta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscaConta.Location = new System.Drawing.Point(17, 33);
+            this.lblBuscaConta.Name = "lblBuscaConta";
+            this.lblBuscaConta.Size = new System.Drawing.Size(123, 20);
+            this.lblBuscaConta.TabIndex = 14;
+            this.lblBuscaConta.Text = "Escolha a conta";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(458, 526);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnSaque);
-            this.Controls.Add(this.textoValor);
-            this.Controls.Add(this.textoSaldo);
-            this.Controls.Add(this.textoNumero);
-            this.Controls.Add(this.textoTitular);
-            this.Controls.Add(this.bntDeposito);
+            this.ClientSize = new System.Drawing.Size(563, 686);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.lblDash);
             this.Controls.Add(this.groupBox1);
             this.Name = "Dashboard";
@@ -186,6 +221,8 @@
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,6 +243,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblTipo;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lblBuscaConta;
+        private System.Windows.Forms.ComboBox comboContas;
     }
 }
 
