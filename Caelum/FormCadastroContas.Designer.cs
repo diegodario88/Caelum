@@ -34,6 +34,9 @@
             this.textoNumero = new System.Windows.Forms.TextBox();
             this.textoTitular = new System.Windows.Forms.TextBox();
             this.groupBoxCadastrar = new System.Windows.Forms.GroupBox();
+            this.lblTipoConta = new System.Windows.Forms.Label();
+            this.comboTipoConta = new System.Windows.Forms.ComboBox();
+            this.groupBoxCadastrar.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -59,7 +62,7 @@
             // btnCadastrar
             // 
             this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.Location = new System.Drawing.Point(227, 262);
+            this.btnCadastrar.Location = new System.Drawing.Point(203, 288);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(126, 36);
             this.btnCadastrar.TabIndex = 12;
@@ -85,26 +88,53 @@
             // 
             // groupBoxCadastrar
             // 
+            this.groupBoxCadastrar.Controls.Add(this.lblTipoConta);
+            this.groupBoxCadastrar.Controls.Add(this.comboTipoConta);
+            this.groupBoxCadastrar.Controls.Add(this.btnCadastrar);
             this.groupBoxCadastrar.Location = new System.Drawing.Point(24, 26);
             this.groupBoxCadastrar.Name = "groupBoxCadastrar";
-            this.groupBoxCadastrar.Size = new System.Drawing.Size(429, 318);
+            this.groupBoxCadastrar.Size = new System.Drawing.Size(429, 369);
             this.groupBoxCadastrar.TabIndex = 15;
             this.groupBoxCadastrar.TabStop = false;
             this.groupBoxCadastrar.Text = "Cadastrar Conta";
+            // 
+            // lblTipoConta
+            // 
+            this.lblTipoConta.AutoSize = true;
+            this.lblTipoConta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoConta.Location = new System.Drawing.Point(38, 224);
+            this.lblTipoConta.Name = "lblTipoConta";
+            this.lblTipoConta.Size = new System.Drawing.Size(48, 24);
+            this.lblTipoConta.TabIndex = 16;
+            this.lblTipoConta.Text = "Tipo";
+            // 
+            // comboTipoConta
+            // 
+            this.comboTipoConta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboTipoConta.FormattingEnabled = true;
+            this.comboTipoConta.Items.AddRange(new object[] {
+            "Conta Poupança",
+            "Conta Corrente",
+            "Conta Jovem"});
+            this.comboTipoConta.Location = new System.Drawing.Point(203, 216);
+            this.comboTipoConta.Name = "comboTipoConta";
+            this.comboTipoConta.Size = new System.Drawing.Size(171, 32);
+            this.comboTipoConta.TabIndex = 13;
             // 
             // FormCadastroContas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 376);
+            this.ClientSize = new System.Drawing.Size(480, 435);
             this.Controls.Add(this.textoTitular);
             this.Controls.Add(this.textoNumero);
-            this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBoxCadastrar);
             this.Name = "FormCadastroContas";
             this.Text = "FormCadastroContas";
+            this.groupBoxCadastrar.ResumeLayout(false);
+            this.groupBoxCadastrar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,5 +148,7 @@
         private System.Windows.Forms.TextBox textoNumero;
         private System.Windows.Forms.TextBox textoTitular;
         private System.Windows.Forms.GroupBox groupBoxCadastrar;
+        private System.Windows.Forms.Label lblTipoConta;
+        private System.Windows.Forms.ComboBox comboTipoConta;
     }
 }

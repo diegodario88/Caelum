@@ -9,6 +9,10 @@
         public string Documentos { get; set; }
 
         //Método Construtor de Clientes
+        public Cliente (string nome)
+        {
+            this.Nome = nome;
+        }
         public Cliente(string nome, int idade, string cpf, string documentos)
         {
             this.Nome = nome;
