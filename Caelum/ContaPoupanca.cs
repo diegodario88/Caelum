@@ -1,10 +1,27 @@
 ﻿namespace Caelum
 {
     class ContaPoupanca : Conta
-    { // Utiliza a herança da conta base e retorna o valor com a taxa de saque da poupança
-        public override bool Sacar(double valor) => base.Sacar(valor + 0.10);
+    {
+        public ContaPoupanca(int numero, int tipo) : base(numero, tipo) { } //Construtor
 
-        public ContaPoupanca(int numero, int tipo) : base(numero, tipo) { }
+        public override bool Sacar(double valor) //Implementa Sacar
+        {
+            {
+                if (this.Saldo >= valor)
+                {
+                    this.Saldo -= (valor + 0.10);
+
+                    return true;
+                }
+                return false;
+            }
+        }
+
         
+        public override void Deposita(double valor) //Implementa Deposita
+        {
+            this.Saldo += valor;
+        }
+
     }
 }

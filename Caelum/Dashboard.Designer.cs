@@ -65,7 +65,7 @@
             // bntDeposito
             // 
             this.bntDeposito.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntDeposito.Location = new System.Drawing.Point(62, 306);
+            this.bntDeposito.Location = new System.Drawing.Point(21, 328);
             this.bntDeposito.Name = "bntDeposito";
             this.bntDeposito.Size = new System.Drawing.Size(103, 35);
             this.bntDeposito.TabIndex = 1;
@@ -104,7 +104,7 @@
             // btnSaque
             // 
             this.btnSaque.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaque.Location = new System.Drawing.Point(247, 306);
+            this.btnSaque.Location = new System.Drawing.Point(151, 328);
             this.btnSaque.Name = "btnSaque";
             this.btnSaque.Size = new System.Drawing.Size(103, 35);
             this.btnSaque.TabIndex = 7;
@@ -168,7 +168,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(63, 269);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(618, 396);
+            this.groupBox1.Size = new System.Drawing.Size(498, 396);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Conta";
@@ -176,7 +176,7 @@
             // btnTransferencia
             // 
             this.btnTransferencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTransferencia.Location = new System.Drawing.Point(402, 306);
+            this.btnTransferencia.Location = new System.Drawing.Point(275, 328);
             this.btnTransferencia.Name = "btnTransferencia";
             this.btnTransferencia.Size = new System.Drawing.Size(116, 35);
             this.btnTransferencia.TabIndex = 15;
@@ -202,7 +202,7 @@
             this.groupBox2.Controls.Add(this.lblBuscaConta);
             this.groupBox2.Location = new System.Drawing.Point(63, 75);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(405, 164);
+            this.groupBox2.Size = new System.Drawing.Size(498, 164);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Busca de conta";
@@ -260,7 +260,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(693, 775);
+            this.ClientSize = new System.Drawing.Size(592, 775);
             this.Controls.Add(this.btnNovaConta);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.lblDash);

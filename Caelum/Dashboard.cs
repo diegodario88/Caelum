@@ -5,9 +5,10 @@ namespace Caelum
 {
     public partial class Dashboard : Form
     {
-        private Conta[] contas;
         private int numeroContas;
+        private Conta[] contas;
         
+
         public Dashboard()
         {
             InitializeComponent();
@@ -15,43 +16,43 @@ namespace Caelum
         // Método Adicina Nova Conta
         public void AdicionaConta(Conta conta)
         {
-            
-                this.contas = new Conta[3+numeroContas];
-                this.contas[this.numeroContas] = conta;
-                this.numeroContas++;
-                comboContas.Items.Add(conta.Titular.Nome);
-                comboDestinoTransferencia.Items.Add(conta.Titular.Nome);
-            
 
+            this.contas[this.numeroContas] = conta;
+            this.numeroContas ++;
+            comboContas.Items.Add(conta.Titular.Nome);
+            comboDestinoTransferencia.Items.Add(conta.Titular.Nome);
+                              
+                       
         }
+
         private void Dashboard_Load(object sender, EventArgs e)
 
         {
-
-            //	Cria um array de contas e poe um cliente como titular
+            int valorFixo = 10;
+            this.contas = new Conta[valorFixo + numeroContas];
             
+            //	Cria algumas contas e clientes
 
-            Conta c1 = new Conta(100, 2);
+            Conta c1 = new ContaCorrente(100, 2);
             Cliente cliente = new Cliente("Maria das Dores", 19, "123456789", "Maior");
             c1.Titular = cliente;
             this.AdicionaConta(c1);
 
-            Conta c2 = new ContaCorrente(200, 2);
+            Conta c2 = new ContaPoupanca(200, 1);
             Cliente cliente1 = new Cliente("Juca dos Prazeres", 15, "1231313", "Emancipado");
             c2.Titular = cliente1;
             this.AdicionaConta(c2);
 
-            Conta c3 = new ContaPoupanca(300, 1);
+
+            Conta c3 = new ContaCorrente(300, 2);
             Cliente cliente2 = new Cliente("João das Couves", 77, "1231", "Maior");
             c3.Titular = cliente2;
             this.AdicionaConta(c3);
-
-
+                                        
+           
             // Totalizador
             TotalizadorDeContas t = new TotalizadorDeContas();
-
-
-
+                        
         }
 
         // Ação do botão Depósito
@@ -74,6 +75,7 @@ namespace Caelum
 
 
         }
+        
         // Ação do botão Saque
         private void btnSaque_Click(object sender, EventArgs e)
         {
@@ -91,24 +93,28 @@ namespace Caelum
                 MessageBox.Show("Transação não permitida");
             }
         }
+        
         // Ação do comboboxContas
         private void comboContas_SelectedIndexChanged(object sender, EventArgs e)
         {
             int indice = comboContas.SelectedIndex;
+
             Conta selecionada = this.contas[indice];
+            
             if (selecionada.Tipo == 1)
             {
-                lblTipo.Text = "Conta Poupança" + "\n" + "Taxa fixa de movimentação" + "\n" + "R$ 0,10 ";
+                lblTipo.Text = "Conta Poupança";
             }
             else
             {
-                lblTipo.Text = "Conta Corrente" + "\n" + "Serão cobrados R$ 0,10 em cada depósito." + "\n" + "R$ 0,05 em saques.";
+                lblTipo.Text = "Conta Corrente";
             }
 
             textoNumero.Text = Convert.ToString(selecionada.Numero);
             textoTitular.Text = selecionada.Titular.Nome;
             textoSaldo.Text = Convert.ToString(selecionada.Saldo);
         }
+        
         // Ação do comboBoxTransferência
         private void comboDestinoTransferencia_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -116,12 +122,14 @@ namespace Caelum
             Conta selecinada = this.contas[indice];
 
         }
+        
         // Ação Botão Nova Conta
         private void btnNovaConta_Click(object sender, EventArgs e)
         {
             FormCadastroContas formularioDeCadastro = new FormCadastroContas(this);
             formularioDeCadastro.ShowDialog();
         }
+        
         // Ação Botão Transferir
         private void btnTransferencia_Click(object sender, EventArgs e)
         {
