@@ -48,6 +48,7 @@
             this.comboContas = new System.Windows.Forms.ComboBox();
             this.lblBuscaConta = new System.Windows.Forms.Label();
             this.btnNovaConta = new System.Windows.Forms.Button();
+            this.btnImposto = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -256,11 +257,23 @@
             this.btnNovaConta.UseVisualStyleBackColor = true;
             this.btnNovaConta.Click += new System.EventHandler(this.btnNovaConta_Click);
             // 
+            // btnImposto
+            // 
+            this.btnImposto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImposto.Location = new System.Drawing.Point(214, 714);
+            this.btnImposto.Name = "btnImposto";
+            this.btnImposto.Size = new System.Drawing.Size(128, 35);
+            this.btnImposto.TabIndex = 17;
+            this.btnImposto.Text = "Impostos";
+            this.btnImposto.UseVisualStyleBackColor = true;
+            this.btnImposto.Click += new System.EventHandler(this.btnImposto_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 775);
+            this.Controls.Add(this.btnImposto);
             this.Controls.Add(this.btnNovaConta);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.lblDash);
@@ -299,6 +312,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboDestinoTransferencia;
         private System.Windows.Forms.Button btnNovaConta;
+        private System.Windows.Forms.Button btnImposto;
     }
 }
 

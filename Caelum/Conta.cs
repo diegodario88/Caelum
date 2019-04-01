@@ -8,13 +8,20 @@
         public double Saldo { get; protected set; }
         public Cliente Titular { get; set; }
         public int Tipo { get; set; }
+        private static int numeroDeContas;
 
-        
-       // Construtor com argumento
-       public Conta (int numero, int tipo)
+        //Método para informar o número da conta 
+        public static int ProximaConta()
         {
+            return Conta.numeroDeContas + 1;
+        }
+        
+        // Construtor com argumento
+        public Conta (int numero, int tipo)
+        {
+            Conta.numeroDeContas++;
             this.Tipo = tipo;
-            this.Numero = numero;
+            this.Numero = Conta.numeroDeContas;
         }
        
         // Método para depositar um valor

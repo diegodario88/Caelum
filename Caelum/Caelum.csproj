@@ -49,6 +49,7 @@
     <Compile Include="Cliente.cs" />
     <Compile Include="Conta.cs" />
     <Compile Include="ContaCorrente.cs" />
+    <Compile Include="ContaInvestimento.cs" />
     <Compile Include="ContaPoupanca.cs" />
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
@@ -62,9 +63,12 @@
     <Compile Include="FormCadastroContas.Designer.cs">
       <DependentUpon>FormCadastroContas.cs</DependentUpon>
     </Compile>
+    <Compile Include="ITributavel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeguroDeVida.cs" />
     <Compile Include="TotalizadorDeContas.cs" />
+    <Compile Include="TotalizadorDeTributos.cs" />
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>

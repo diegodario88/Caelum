@@ -133,6 +133,7 @@
             this.Controls.Add(this.groupBoxCadastrar);
             this.Name = "FormCadastroContas";
             this.Text = "FormCadastroContas";
+            this.Load += new System.EventHandler(this.FormCadastroContas_Load);
             this.groupBoxCadastrar.ResumeLayout(false);
             this.groupBoxCadastrar.PerformLayout();
             this.ResumeLayout(false);

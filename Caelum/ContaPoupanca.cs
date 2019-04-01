@@ -1,6 +1,6 @@
 ﻿namespace Caelum
 {
-    class ContaPoupanca : Conta
+    class ContaPoupanca : Conta, ITributavel
     {
         public ContaPoupanca(int numero, int tipo) : base(numero, tipo) { } //Construtor
 
@@ -17,10 +17,14 @@
             }
         }
 
-        
         public override void Deposita(double valor) //Implementa Deposita
         {
             this.Saldo += valor;
+        }
+
+        public double CalculaTributo()
+        {
+            return this.Saldo * 0.02;
         }
 
     }

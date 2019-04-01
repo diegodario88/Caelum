@@ -1,12 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Caelum
 {
     public partial class Dashboard : Form
     {
-        private int numeroContas;
-        private Conta[] contas;
+        TotalizadorDeContas totalContas = new TotalizadorDeContas();
+        TotalizadorDeTributos totalTributos = new TotalizadorDeTributos();
+        private List<Conta> contas;
+        
+        
         
 
         public Dashboard()
@@ -17,10 +21,10 @@ namespace Caelum
         public void AdicionaConta(Conta conta)
         {
 
-            this.contas[this.numeroContas] = conta;
-            this.numeroContas ++;
+            this.contas.Add(conta);
             comboContas.Items.Add(conta.Titular.Nome);
             comboDestinoTransferencia.Items.Add(conta.Titular.Nome);
+            totalContas.Soma(conta);
                               
                        
         }
@@ -28,31 +32,40 @@ namespace Caelum
         private void Dashboard_Load(object sender, EventArgs e)
 
         {
-            int valorFixo = 10;
-            this.contas = new Conta[valorFixo + numeroContas];
+            //Cria uma lista de Contas
+            this.contas = new List<Conta>();
+            
             
             //	Cria algumas contas e clientes
 
-            Conta c1 = new ContaCorrente(100, 2);
+            ContaCorrente c1 = new ContaCorrente(100, 2);
             Cliente cliente = new Cliente("Maria das Dores", 19, "123456789", "Maior");
+            c1.Deposita(200);
             c1.Titular = cliente;
+            c1.CalculaTributo();
             this.AdicionaConta(c1);
 
-            Conta c2 = new ContaPoupanca(200, 1);
+            ContaPoupanca c2 = new ContaPoupanca(200, 1);
             Cliente cliente1 = new Cliente("Juca dos Prazeres", 15, "1231313", "Emancipado");
+            c2.Deposita(200);
             c2.Titular = cliente1;
+            c2.CalculaTributo();
             this.AdicionaConta(c2);
 
 
-            Conta c3 = new ContaCorrente(300, 2);
+            ContaCorrente c3 = new ContaCorrente(300, 2);
             Cliente cliente2 = new Cliente("João das Couves", 77, "1231", "Maior");
+            c3.Deposita(200);
             c3.Titular = cliente2;
+            c3.CalculaTributo();
             this.AdicionaConta(c3);
-                                        
-           
-            // Totalizador
-            TotalizadorDeContas t = new TotalizadorDeContas();
-                        
+            
+            totalTributos.Adiciona(c1);
+            totalTributos.Adiciona(c2);
+            totalTributos.Adiciona(c3);
+            
+            
+
         }
 
         // Ação do botão Depósito
@@ -83,13 +96,15 @@ namespace Caelum
             double valor = Convert.ToDouble(valorDigitado);
             int indice = comboContas.SelectedIndex;
             Conta selecionada = this.contas[indice];
-            if (selecionada.Sacar(valor))
+            try 
             {
+                selecionada.Sacar(valor);
                 textoSaldo.Text = Convert.ToString(selecionada.Saldo);
                 MessageBox.Show("Transação feita com sucesso ");
             }
-            else
+            catch (Exception ex)
             {
+
                 MessageBox.Show("Transação não permitida");
             }
         }
@@ -140,6 +155,15 @@ namespace Caelum
             Conta selecionadaOrigem = this.contas[indiceOrigem];
             Conta selecionadaDestino = this.contas[indiceDestino];
             selecionadaOrigem.Transfere(valorOperacao, selecionadaDestino);
+        }
+
+        // Ação Botão Imposto
+        private void btnImposto_Click(object sender, EventArgs e)
+        {
+            
+            MessageBox.Show("Total Contas: " + totalContas.ValorTotal);
+            MessageBox.Show("Total Tributos: " + totalTributos.Total);
+                        
         }
     }
 }
